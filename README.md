@@ -5,10 +5,10 @@ Simple plugin that returns all of the installed apps, their names and their pack
 ##Install
 
 recomended
-    sudo plugman install --platform android --project . --plugin https://github.com/KIvanow/installedApps.git
+    $ sudo plugman install --platform android --project . --plugin https://github.com/KIvanow/installedApps.git
     
 alternatively
-    sudo plugman install --platform android --project . --plugin info.quatinus.cordova.plugins.installedapps
+    $ sudo plugman install --platform android --project . --plugin info.quatinus.cordova.plugins.installedapps
 
 ## Using
 
