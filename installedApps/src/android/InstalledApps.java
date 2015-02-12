@@ -1,4 +1,4 @@
-package info.quatinus.cordova.plugins.installedApps;
+package info.quatinus.cordova.plugin;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,7 +44,7 @@ public class InstalledApps extends CordovaPlugin {
             for (ApplicationInfo packageInfo : packages) {
                 try {
                     JSONObject json = new JSONObject();
-                    json.put( "name", pm.getApplicationLabel( this.cordova.getActivity().getPackageManager().getApplicationInfo( packageInfo.packageName, 0 )).toString() );
+                    json.put( "name", pm.getApplicationLabel( pm.getApplicationInfo( packageInfo.packageName, 0 )).toString() );
                     res.add( json );
                 } catch (NameNotFoundException e) {}
 
@@ -64,7 +64,7 @@ public class InstalledApps extends CordovaPlugin {
                 try {
                     JSONObject json = new JSONObject();
                     json.put( "package", packageInfo.packageName );
-                    json.put( "name", pm.getApplicationLabel( this.cordova.getActivity().getPackageManager().getApplicationInfo( packageInfo.packageName, 0 )).toString() );
+                    json.put( "name", pm.getApplicationLabel( pm.getApplicationInfo( packageInfo.packageName, 0 )).toString() );
                     res.add( json );
                 } catch (NameNotFoundException e) {}
 
